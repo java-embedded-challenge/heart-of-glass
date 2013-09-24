@@ -5,6 +5,21 @@
     Description:
         Purpose of the stylesheet follows.
 */
+@font-face {
+    font-family: 'Multi';
+    src: local('Multi Bold'), local('Multi-Bold'), url(ml.ttf) format('woff');
+}
+@font-face {
+    font-family: 'Multi';
+    src: local('Multi Light'), local('Multi-Light'), url(ml.ttf) format('woff');
+}
+
+    body,html,td,table,div,th,font,h2,div,a,thead,tbody{
+        font-family: 'Multi', Arial;*
+
+
+
+    }
 
 root { 
     display: block;
@@ -12,7 +27,6 @@ root {
 body{padding: 0px; margin: 0px;}
 
 div {
-    font-family: helvetica;
     font-size:60px;
 /*    border:1px solid red;*/
 border-bottom: 1px solid  lightslategrey;
@@ -59,4 +73,24 @@ border-bottom: 1px solid  lightslategrey;
 #himage{    position:absolute;
     left:605px;
     top:35px;
+}
+#log{
+    position: absolute;
+    left: 20px;
+    top:240px;
+    width:200px;
+    height: 220px;
+    border: 1px solid  darkgray;
+     font-size: 32px;
+      
+      
+}    
+#log p{
+/*    border: 1px solid red;
+    */
+    margin: 0px;}
+    
+.warn{
+    
+    color: red ;
 }
