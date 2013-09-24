@@ -40,7 +40,7 @@ function standardeviation(ar){
     return sd;
 }
 
-
+//simple lie detector
 function liedetect(ar){
      var av=favg(ar);
 var sd= standardeviation(ar);
@@ -130,7 +130,7 @@ function draw() {
             var nx=i * (w / lim);
             var ny=h / 2 + 100 - element;
             context.lineTo(nx, ny);
-
+//lie point
 if(ldatalie[i]==true) context.arc(nx, ny, 4, 0,360,false);
      
             // Do something with element i.
