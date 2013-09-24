@@ -47,7 +47,7 @@ function liedetect(ar) {
     var sd = standardeviation(ar);
 
     for (var i = 0; i < ar.length; i++) {
-        if (Math.abs(parseInt(ar[i]) - avg) > sd * 2) {
+        if (parseInt(ar[i])>60&&parseInt(ar[i])<100&&   Math.abs(parseInt(ar[i]) - avg) > sd * 2) {
             ldatalie[i] = true;
             //alert('lie at'+i);
             lie = true;
@@ -94,8 +94,9 @@ function run() {
             liedetect(ldata);
 
             draw();
-
-            $("#himage").fadeToggle('slow');
+//beat according to hr
+//alert(1000.0/ (lnum/60.0) );
+            $("#himage").fadeToggle({duration:1000.0/ (lnum/60.0)  });
         }
     });
 
