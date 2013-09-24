@@ -1,0 +1,62 @@
+/* 
+    Document   : my
+    Created on : Sep 24, 2013, 12:28:14 AM
+    Author     : stevenlizarazo
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+root { 
+    display: block;
+}
+body{padding: 0px; margin: 0px;}
+
+div {
+    font-family: helvetica;
+    font-size:60px;
+/*    border:1px solid red;*/
+border-bottom: 1px solid  lightslategrey;
+    }
+    
+#number{
+    position:absolute;
+    left:450px;
+    top:20px;
+    width: 150px;
+     text-align:  right;
+      
+}
+
+
+#avg{
+    position:absolute;
+    left:450px;
+    top:90px;
+        width: 150px;
+     text-align:  right;
+
+}
+    
+#number_tit{
+    position:absolute;
+    left:310px;
+        width: 150px;
+        top:20px;
+     text-align:  right;
+ 
+}
+
+
+#avg_tit{
+    position:absolute;
+    left:310px;
+    top:90px;
+         width: 150px;
+     text-align:  right;
+
+}
+
+#himage{    position:absolute;
+    left:605px;
+    top:35px;
+}
