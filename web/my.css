@@ -24,8 +24,15 @@
 root { 
     display: block;
 }
-body{padding: 0px; margin: 0px;}
-
+body{
+    position: absolute;
+    width: 640px;
+     height: 360px;
+      background: black;
+    padding: 0px; margin: 0px;
+ color: white;
+ 
+}
 div {
     font-size:60px;
 /*    border:1px solid red;*/
@@ -48,7 +55,7 @@ border-bottom: 1px solid  lightslategrey;
     top:90px;
         width: 150px;
      text-align:  right;
-
+ display: none;
 }
     
 #number_tit{
@@ -67,6 +74,7 @@ border-bottom: 1px solid  lightslategrey;
     top:90px;
          width: 150px;
      text-align:  right;
+     display: none;
 
 }
 
@@ -77,9 +85,9 @@ border-bottom: 1px solid  lightslategrey;
 #log{
     position: absolute;
     left: 20px;
-    top:240px;
+    top:200px;
     width:200px;
-    height: 220px;
+    height: 120px;
     border: 1px solid  darkgray;
      font-size: 32px;
       

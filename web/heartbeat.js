@@ -8,7 +8,7 @@ var ldatalie = new Array();
 var lnum = 0;
 var lw = 999;
 var hg = 50;
-var threshold = 130;
+var threshold = 60;
 var avg = 50;
 var lie = false;
 
@@ -108,7 +108,7 @@ function run() {
     setTimeout(run, 1000);
 
 }
-var w = 640, h = 480, lim = 30;
+var w = 640, h = 360, lim = 30;
 
 
 function draw() {
@@ -122,9 +122,9 @@ function draw() {
 
 
         context.beginPath();
-        context.fillStyle = "#F0F0F0";
+        context.fillStyle = "#000000";
         context.fillRect(0, 0, w, h);
-        context.fillStyle = "#0a0a0a";
+        context.strokeStyle = "#ffffff";
         var length = ldata.length,
                 element = null;
         context.moveTo(0, h / 1);
@@ -168,7 +168,7 @@ var c = 0;
 
 function delFirst() {
 
-    if (countChildElements("log", 'p') > 4) {
+    if (countChildElements("log", 'p') > 2) {
         document.getElementById("log").removeChild(document.getElementById("log").firstChild);
     }
 }
