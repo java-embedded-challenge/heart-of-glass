@@ -15,7 +15,7 @@
 }
 
     body,html,td,table,div,th,font,h2,div,a,thead,tbody{
-        font-family: 'Multi', Arial;*
+        font-family: 'Multi';
 
 
 
@@ -25,25 +25,24 @@ root {
     display: block;
 }
 body{
-    position: absolute;
-    width: 640px;
-     height: 360px;
-      background: black;
+    width: 1000px;
+     height: 550px;
+/*border: 1px solid red;*/
+    background: black;
     padding: 0px; margin: 0px;
  color: white;
  
 }
 div {
-    font-size:60px;
+    font-size:90px;
 /*    border:1px solid red;*/
-border-bottom: 1px solid  lightslategrey;
     }
     
 #number{
     position:absolute;
-    left:450px;
+    left:730px;
     top:20px;
-    width: 150px;
+    width: 250px;
      text-align:  right;
       
 }
@@ -60,7 +59,7 @@ border-bottom: 1px solid  lightslategrey;
     
 #number_tit{
     position:absolute;
-    left:310px;
+    left:590px;
         width: 150px;
         top:20px;
      text-align:  right;
@@ -79,17 +78,18 @@ border-bottom: 1px solid  lightslategrey;
 }
 
 #himage{    position:absolute;
-    left:605px;
-    top:35px;
+    left:760px;
+    top:50px;
+    width:50px;
 }
 #log{
     position: absolute;
     left: 20px;
-    top:200px;
-    width:200px;
-    height: 120px;
-    border: 1px solid  darkgray;
-     font-size: 32px;
+    top:300px;
+    width:500px;
+    height: 220px;
+/*    border: 1px solid  black;*/
+     font-size: 60px;
       
       
 }    

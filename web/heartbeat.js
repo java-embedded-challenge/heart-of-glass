@@ -7,10 +7,20 @@ var ldata = new Array();
 var ldatalie = new Array();
 var lnum = 0;
 var lw = 999;
-var hg = 50;
-var threshold = 60;
+var hg = 0;
+var maxhb=240;
+var threshold = 180;
+var lthreshold = 80;
 var avg = 50;
 var lie = false;
+
+function start(){
+setLimits();
+    
+                setTimeout(run,1000);
+
+}
+
 
 function favg(ar) {
 
@@ -91,7 +101,7 @@ function run() {
             $("#number").html(lnum);
             $("#avg").html(parseInt(avg));
 
-            liedetect(ldata);
+//            liedetect(ldata);
 
             draw();
 //beat according to hr
@@ -108,7 +118,7 @@ function run() {
     setTimeout(run, 1000);
 
 }
-var w = 640, h = 360, lim = 30;
+var w = 1000, h = 550, lim = 30;
 
 
 function draw() {
@@ -122,17 +132,51 @@ function draw() {
 
 
         context.beginPath();
-        context.fillStyle = "#000000";
-        context.fillRect(0, 0, w, h);
-        context.strokeStyle = "#ffffff";
+        context.save();
+        context.fillStyle = "#440000";
+        context.fillRect(0, 0, w, h-(threshold *h/maxhb));
+        context.fill();
+    
+    context.restore();
+    context.save();
+        context.fillStyle = "#004400";
+        context.fillRect(0, h-(threshold*h/maxhb), w, h-(lthreshold*h/maxhb));
+        context.fill();
+    
+    context.restore();
+    
+    context.save();
+        context.fillStyle = "#444";
+        context.fillRect(0, h-(lthreshold*h/maxhb), w, h);
+        context.fill();
+    
+
+
+
+
+    context.restore();
+    
+        
+        
+        //context.strokeStyle = "#ffffff";
+        
+var gradient = context.createLinearGradient(0,h,0,0);
+				gradient.addColorStop(0.0,"#b0b0b0");
+				gradient.addColorStop(0.5,"#b0b0b0");
+				gradient.addColorStop(0.5,"#90ff90");
+				gradient.addColorStop(0.85,"#90ff90");
+				gradient.addColorStop(0.85,"#ff9090");
+				gradient.addColorStop(1.0,"#ff9090");
+				
+				context.strokeStyle = gradient;
         var length = ldata.length,
                 element = null;
-        context.moveTo(0, h / 1);
-
+//        context.moveTo(0, h / 2);
+  context.lineWidth = 5;
         for (var i = 0; i < length; i++) {
             element = ldata[i];
             var nx = i * (w / lim);
-            var ny = h / 2 + 100 - element;
+            var ny = h - element*h/maxhb;
             context.lineTo(nx, ny);
 //lie point
             if (ldatalie[i] == true)
@@ -189,3 +233,30 @@ function log(s) {
 }
 
 log('Welcome');
+
+
+var ageTargetRates = {
+				20: [ 100, 170, 200],
+				25: [ 95, 162, 190],
+				30: [ 95, 162, 190],
+				35: [ 93, 157, 185],
+				40: [ 90, 153, 180],
+				45: [ 88, 149, 175],
+				50: [ 85, 145, 170],
+				55: [ 83, 140, 165],
+				60: [ 80, 136, 160],
+				65: [ 78, 132, 155],
+				70: [ 75, 128, 150]
+			};
+                        
+                        
+                        function setLimits() {
+                                		    var age = window.location.hash.substring(1);
+age=31;
+				var targetRates = ageTargetRates[Math.floor((parseInt(age)+4)/5)*5];
+                                lthreshold = targetRates[0];
+                                threshold = targetRates[1];
+                                maxhb = targetRates[2];
+                                
+                                ;
+    		}

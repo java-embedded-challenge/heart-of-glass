@@ -13,7 +13,7 @@
             stack.remove(0);
         }
         stack.add(e);
-    }
+    }  
 
     public static void iniciar(String porta) throws Exception {
 //		things = new SerialDevice(porta, 9600);
@@ -51,7 +51,8 @@
             if (last == 0) {
                 last = (int) (Math.random() * 40 + 50);
             }
-            return last += (int) (Math.random() * 10 - 5);
+            if(last>300)last=0;
+            return last += (int) (Math.random() * 20 - 5);
         }
         //Device things = new SerialDevice(porta, 9600);
         //things.open();
