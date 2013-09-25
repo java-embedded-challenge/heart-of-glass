@@ -32,7 +32,7 @@
 
 
                         put(leer);
-                        System.out.println("inserting");
+                   //     System.out.println("inserting");
                         Thread.sleep(1000);
                     } catch (Exception e) {
                     }

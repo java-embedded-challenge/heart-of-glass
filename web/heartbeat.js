@@ -5,7 +5,7 @@
 
 var ldata = new Array();
 var ldatalie = new Array();
-var lnum = 0;
+var lnum = 80;
 var lw = 999;
 var hg = 0;
 var maxhb=240;
@@ -13,12 +13,13 @@ var threshold = 180;
 var lthreshold = 80;
 var avg = 50;
 var lie = false;
+var showing=true;
 
 function start(){
 setLimits();
     
-                setTimeout(run,1000);
-
+                setTimeout(run);
+                beatOn();
 }
 
 
@@ -79,12 +80,14 @@ function put(e) {
 function run() {
 
     $.ajax({
-        url: 'index.jsp',
+        url: 'data.jsp',
         type: "GET",
         dataType: "json",
         success: function(data) {
             reset();
-
+var tlnum=0;
+            lnum = data[data.length-1];
+            
             $.each(data, function(i, item) {
                 put(item);
 
@@ -92,10 +95,11 @@ function run() {
                     hg = item;
                 if (item < lw)
                     lw = item;
-                lnum = item;
+                tlnum = item;
 
             });
 
+lnum=tlnum;
             avg = favg(ldata);
 
             $("#number").html(lnum);
@@ -104,9 +108,6 @@ function run() {
 //            liedetect(ldata);
 
             draw();
-//beat according to hr
-//alert(1000.0/ (lnum/60.0) );
-            $("#himage").fadeToggle({duration:1000.0/ (lnum/60.0)  });
         }
     });
 
@@ -119,6 +120,20 @@ function run() {
 
 }
 var w = 1000, h = 550, lim = 30;
+
+			function beatOn() {
+                            
+                            $("#himage").fadeIn({duration:50  });
+                            setTimeout(beatOff,60000 / lnum / 2);
+			}
+			
+			function beatOff() {
+                            log(''+lnum);
+//                            alert(60000.0 / (lnum+1) / 2);
+                            $("#himage").fadeOut({duration:50});
+			                            setTimeout(beatOn,60000 / lnum / 2);
+
+                        }
 
 
 function draw() {
