@@ -88,12 +88,12 @@
 
 
 %>
-{
+[
 <%
     for (int i = 0; i < stack.size(); i++) {
-%>"data<%=i%>":"<%=stack.get(i)%>" <%
+%><%=stack.get(i)%><%
     if (i < stack.size() - 1) {%>,<%}
     }
 
 %>
-}
+]
