@@ -48,14 +48,6 @@ div {
 }
 
 
-#avg{
-    position:absolute;
-    left:450px;
-    top:90px;
-        width: 150px;
-     text-align:  right;
- display: none;
-}
     
 #number_title {
     position:absolute;
@@ -64,17 +56,6 @@ div {
         top:20px;
      text-align:  right;
  
-}
-
-
-#avg_tit{
-    position:absolute;
-    left:310px;
-    top:90px;
-         width: 150px;
-     text-align:  right;
-     display: none;
-
 }
 
 #himage{    position:absolute;

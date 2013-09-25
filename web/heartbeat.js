@@ -18,13 +18,6 @@ function start() {
 }
 
 
-function reset() {
-    ldata = new Array();
-
-}
-function put(e) {
-    ldata.push(e);
-}
 function run() {
 
     $.ajax({
@@ -32,13 +25,10 @@ function run() {
         type: "GET",
         dataType: "json",
         success: function(data) {
-            reset();
+            
             lnum = data[data.length - 1];
 
-            $.each(data, function(i, item) {
-                put(item);
-            });
-
+         ldata=data;
 
             $("#number").html(lnum);
             draw();
