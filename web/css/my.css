@@ -1,0 +1,96 @@
+/* 
+    Document   : my
+    Created on : Sep 24, 2013, 12:28:14 AM
+    Author     : stevenlizarazo
+    Description:
+        Purpose of the stylesheet follows.
+*/
+@font-face {
+    font-family: 'Multi';
+    src: local('Multi Bold'), local('Multi-Bold'), url(../fonts/Arual.ttf) format('woff');
+}
+@font-face {
+    font-family: 'Multi';
+    src: local('Multi Light'), local('Multi-Light'), url(../fonts/Arual.ttf) format('woff');
+}
+
+    body,html,td,table,div,th,font,h2,div,a,thead,tbody{
+        font-family: 'Multi';
+
+
+
+    }
+
+root { 
+    display: block;
+}
+body{
+    width: 1000px;
+     height: 550px;
+/*border: 1px solid red;*/
+    background: black;
+    padding: 0px; margin: 0px;
+ color: white;
+ 
+}
+div {
+    font-size:130px;
+/*    border:1px solid red;*/
+    }
+    
+#number{
+    position:absolute;
+    left:730px;
+    top:40px;
+    width: 250px;
+     text-align:  right;
+      
+}
+
+
+    
+#number_title {
+    position:absolute;
+    left:500px;
+        width: 150px;
+        top:20px;
+     text-align:  right;
+ 
+}
+
+#himage{    position:absolute;
+    left:680px;
+    top:50px;
+    width:50px;
+}
+#log{
+    position: absolute;
+    left: 20px;
+    top:300px;
+    width:500px;
+    height: 220px;
+/*    border: 1px solid  black;*/
+     font-size: 60px;
+      
+      
+}    
+#log p{
+/*    border: 1px solid red;
+    */
+    margin: 0px;}
+    
+.warn{
+    
+    color: red ;
+}
+
+
+ 
+#main_title {
+    position:absolute;
+    left:20px;
+        
+        top:420px;
+     text-align:  left;
+ 
+}
