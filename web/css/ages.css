@@ -1,0 +1,29 @@
+body {
+	position: absolute;
+	width: 640px;
+	height: 360px;
+	background-color: #e0e0e0;
+	color: #b0b0b0;
+}
+
+.title {
+	font:40px arial,sans-serif;
+	}
+
+.question {
+	font:20px arial,sans-serif;
+}
+
+.warning {
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	margin: 15px;
+	font:italic 15px arial,sans-serif;
+}
+
+li, a {
+	color: #b0b0b0;
+	font:20px arial,sans-serif;
+	list-style-type: none;
+}
