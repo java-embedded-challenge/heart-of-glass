@@ -1,17 +1,24 @@
+@import url(http://fonts.googleapis.com/css?family=Roboto:400,300,100);
+
 body {
 	position: absolute;
 	width: 640px;
 	height: 360px;
-	background-color: #e0e0e0;
-	color: #b0b0b0;
+	background-color: #000;
+	color: #fff;
+	font-family: 'Roboto';
+	font-weight: 100;
+	font-size: 40px;
+	text-shadow: 0 1px 1px #000;
+	border-style: solid;
 }
 
 .title {
-	font:40px arial,sans-serif;
-	}
+	font: 40px;
+}
 
 .question {
-	font:20px arial,sans-serif;
+	font: 20px;
 }
 
 .warning {
@@ -19,11 +26,15 @@ body {
 	bottom: 0;
 	right: 0;
 	margin: 15px;
-	font:italic 15px arial,sans-serif;
+	font: italic 15px;
 }
 
-li, a {
-	color: #b0b0b0;
-	font:20px arial,sans-serif;
+li {
+	font: 20px;
 	list-style-type: none;
+}
+
+a {
+	color: #fff;
+	font: 20px;
 }
