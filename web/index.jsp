@@ -9,6 +9,7 @@ and open the template in the editor.
         <script src="js/jquery.js"></script>
         <script src="js/heartbeat.js"></script>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
         <link type="text/css" href="css/my.css" rel="stylesheet" />
 
     </head>

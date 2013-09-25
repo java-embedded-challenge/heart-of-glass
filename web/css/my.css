@@ -5,6 +5,7 @@
     Description:
         Purpose of the stylesheet follows.
 */
+@import url(http://fonts.googleapis.com/css?family=Roboto:400,300,100);
 @font-face {
     font-family: 'Glass';
     src: local('Glass Bold'), local('Multi-Bold'), url(../fonts/Arual.ttf) format('woff');
@@ -15,7 +16,7 @@
 }
 
     body,html,td,table,div,th,font,h2,div,a,thead,tbody{
-        font-family: 'Glass';
+        font-family: 'Roboto', sans-serif;
 
 
 
@@ -31,6 +32,11 @@ body{
     background: black;
     padding: 0px; margin: 0px;
  color: #FFFFFF;
+ background-color: #000;
+  	        color: #fff;
+  	        font-family: 'Roboto', sans-serif;
+    	        font-weight: 100;
+  	        text-shadow: 0 1px 1px #000;
  
 }
 div {
@@ -41,7 +47,7 @@ div {
 #number{
     position:absolute;
     left:730px;
-    top:40px;
+    top:0px;
     width: 250px;
      text-align:  right;
       
@@ -53,14 +59,14 @@ div {
     position:absolute;
     left:500px;
         width: 150px;
-        top:20px;
+        top:0px;
      text-align:  right;
  
 }
 
 #himage{    position:absolute;
-    left:680px;
-    top:50px;
+    left:695px;
+    top:70px;
     width:50px;
 }
 #log{
