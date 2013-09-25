@@ -46,7 +46,7 @@ div {
     
 #number{
     position:absolute;
-    left:730px;
+    left:620px;
     top:0px;
     width: 250px;
      text-align:  right;
@@ -65,9 +65,9 @@ div {
 }
 
 #himage{    position:absolute;
-    left:695px;
-    top:70px;
-    width:50px;
+    left:890px;
+    top:50px;
+    width:80px;
 }
 #log{
     position: absolute;
@@ -95,7 +95,8 @@ div {
 #main_title {
     position:absolute;
     left:20px;
-        
+     font-style:  italic;
+          font-size:  90px;
         top:420px;
      text-align:  left;
  

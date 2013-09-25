@@ -14,8 +14,8 @@ and open the template in the editor.
 
     </head>
     <body>
-        <div id="main_title">H-Glass</div>
-        <div id="number_title">HR</div>
+        <div id="main_title">Heart Of Glass</div>
+        <div id="number_title"></div>
         <div id="number">0</div>
         <div id="log"></div>
 
