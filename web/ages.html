@@ -4,11 +4,37 @@
         <meta charset="utf-8">
         <title>Heart of Glass</title>
         <link rel="stylesheet" href="css/ages.css">
+        <script src="js/jquery.js"></script>
+        <script>
+        	$(document).ready(function() {
+                start();
+            });
+            
+            function start() {
+            	$('.question, ul').hide();
+            	
+            	$('body').click(showInstructions);
+            }
+            
+            function showInstructions() {
+				$('.title, .warning').hide();
+            	$('.question').show();
+            	$('body').off('click');
+            	$('body').click(showAges);
+            }
+            
+            function showAges() {
+				$('.question').hide();
+            	$('ul').show();
+            }
+            
+        </script>
     </head>
     <body>
         <div>
         	<div class="title">Heart of Glass</div>
-        	<div class="question">Select the link corresponding to your age.</div>
+	        <div class="warning">Consult your doctor before starting a new fitness program</div>
+        	<div class="question">Select the link corresponding to your age</div>
             <ul>
                 <li><a href="index.jsp#20">18-20</a></li>
                 <li><a href="index.jsp#30">21-29</a></li>
@@ -21,7 +47,6 @@
                 <li><a href="index.jsp#65">65-69</a></li>
                 <li><a href="index.jsp#70">70</a></li>
             </ul>
-        </div>
-        <div class="warning">Consult your doctor before starting a new fitness program.</dvi>
+            <div class="continue">Tap to continue</div>
     </body>
 </html>

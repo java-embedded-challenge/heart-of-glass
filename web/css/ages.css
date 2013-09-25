@@ -14,24 +14,39 @@ body {
 }
 
 .title {
-	font: 40px;
+	margin: 15px;
+	font-size: 60px;
 }
 
 .question {
+	margin: 15px;
 	font: 20px;
 }
 
 .warning {
-	position: absolute;
-	bottom: 0;
-	right: 0;
 	margin: 15px;
 	font: italic 15px;
 }
 
+.continue {
+	position: absolute;
+	bottom: 15px;
+	right: 15px;
+	font-size: 20px;	
+};
+
+ul {
+	-webkit-column-count:2;
+	column-count:2;
+	height:
+}
 li {
 	font: 20px;
 	list-style-type: none;
+}
+
+li:hover {
+	background-color: #404040;
 }
 
 a {
