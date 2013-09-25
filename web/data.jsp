@@ -49,8 +49,8 @@
     public static int ler() throws IOException, Exception {
         if (things == null) {
             if (last == 0) {
-                last = (int) (Math.random() * 40 + 50);
-            }
+                last = (int) (Math.random() * 40 + 60);
+              }
             if(last>300)last=0;
             return last += (int) (Math.random() * 10 - 5);
         }
