@@ -6,16 +6,16 @@
         Purpose of the stylesheet follows.
 */
 @font-face {
-    font-family: 'Multi';
-    src: local('Multi Bold'), local('Multi-Bold'), url(../fonts/Arual.ttf) format('woff');
+    font-family: 'Glass';
+    src: local('Glass Bold'), local('Multi-Bold'), url(../fonts/Arual.ttf) format('woff');
 }
 @font-face {
-    font-family: 'Multi';
-    src: local('Multi Light'), local('Multi-Light'), url(../fonts/Arual.ttf) format('woff');
+    font-family: 'Glass';
+    src: local('Glass Light'), local('Multi-Light'), url(../fonts/Arual.ttf) format('woff');
 }
 
     body,html,td,table,div,th,font,h2,div,a,thead,tbody{
-        font-family: 'Multi';
+        font-family: 'Glass';
 
 
 
@@ -30,7 +30,7 @@ body{
 /*border: 1px solid red;*/
     background: black;
     padding: 0px; margin: 0px;
- color: white;
+ color: #FFFFFF;
  
 }
 div {
