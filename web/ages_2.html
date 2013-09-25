@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html xmlns="https://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>Card</title>
+<link rel="stylesheet" href="css/ages_2.css">
+<link rel="stylesheet" href="https://mirror-api-playground.appspot.com/assets/css/demo.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script src="https://apis.google.com/js/client.js?onload=initAuth"></script>
+  
+  
+    <script src="js/card.js"></script>
+    <script >function goto(v){ window.location='index.jsp#'+v; }</script>
+ </head>
+<body>
+  <div class="scroll leftscroll" style="display: none;"></div>
+  <div class="card">
+      
+<article class="cover-only">
+  <section>
+    <p class="text-auto-size">Please select your age</p>
+  </section>
+  <footer>
+    <p>Hover to scroll</p>
+  </footer>
+</article>
+<article class="auto-paginate">
+  <ul class="text-x-small">
+    <li onClick="goto(18)">18-20</li>
+    <li onClick="goto(20)">21-29</li>
+    <li onClick="goto(30)">30-39</li>
+    <li onClick="goto(40)">40-40</li>
+    <li onClick="goto(45)" >45-49</li>
+    <li onClick="goto(50)" >50-54</li>
+    <li onClick="goto(55)">55-59</li>
+    <li onClick="goto(60)">60-64</li>
+    <li onClick="goto(65)">65-69</li>
+    <li onClick="goto(70)">70</li>
+  </ul>
+</article>
+
+  </div>
+  <div class="scroll rightscroll" style="display: none;"></div>
+</body>
+</html>  
+
+
+
+     <!--
+     {
+  "html": "<article style=\"left: 0px; visibility: visible;\" class=\"cover-only\">\n  <section>\n    <p class=\"text-auto-size\">Please select your age</p>\n  </section>\n  <footer>\n    <p>Hover to scroll</p>\n  </footer>\n</article><article style=\"left: 640px; visibility: visible;\" class=\"auto-paginate\">\n  <ul class=\"text-x-small\">\n    <li>18-20</li>\n    <li>21-29</li>\n    <li>30-39</li>\n    <li>40-40</li>\n    <li>45-49</li>\n    <li>50-54</li>\n    <li>55-59</li>\n    <li>60-64</li>\n    <li>65-69</li>\n    <li>70</li>\n  </ul>\n</article>",
+  "notification": {
+    "level": "DEFAULT"
+  }
+}
+     -->
