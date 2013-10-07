@@ -1,4 +1,4 @@
-heart-of-glass
+Heart of Glass
 ==============
 
 A Heart Beat Monitor based on Polar Heart Sensor and Raspberry Pi, 
