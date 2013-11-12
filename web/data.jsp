@@ -4,16 +4,25 @@
 <%@page import="org.things.Things"%>
 <%@page import="org.things.device.SerialDevice"%>
 <%@page import="org.things.Device"%>
-<%!    private static Device device;
+<%@page import="org.unitsofmeasurement.quantity.Quantity" %>
+<%@page import="org.eclipse.uomo.examples.units.types.Health"%>
+<%@page import="org.eclipse.uomo.examples.units.types.HeartRate"%>
+<%@page import="org.eclipse.uomo.examples.units.types.HeartRateAmount"%>
+<%! private static Device device;
     private static int inited = 0;
     private static String port = "/dev/ttyUSB0";
-    private static final List<Integer> stack = new ArrayList<Integer>();
-
+    private static final List<Quantity<HeartRate>> stack = new ArrayList<Quantity<HeartRate>>();
+    //private static final List<Integer> stack = new ArrayList<Integer>();
+    
     public static void put(int e) {
         if (stack.size() > 30) {
             stack.remove(0);
         }
-        stack.add(e);
+        Quantity<HeartRate> q = new HeartRateAmount(e, Health.BPM);
+        System.out.println(q);
+        
+        stack.add(q);
+        //stack.add(e);
     }  
 
     public static void init(String port) throws Exception {
@@ -59,13 +68,13 @@
         Things.delay(100);
 
         String s = device.receive();
-        String batimento = null;
+        //String batimento = null;
 
         if (s != null) {
             return Integer.valueOf(s.split(" ")[2]);
             //	fc = new FrequenciaCardiaca();
         } else {
-            throw new Exception("O sensor retornou nulo.");
+            throw new Exception("Sensor returned null.");
         }
         //device.close();
 
@@ -74,24 +83,18 @@
     public static void close() throws Exception {
         device.close();
     }
-
-
 %>
 <%
     if (inited == 0) {
         init(port);
         inited = 1;
     }
-
-
-
 %>
 [
 <%
     for (int i = 0; i < stack.size(); i++) {
-%><%=stack.get(i)%><%
+%><%=stack.get(i).value()%><%
     if (i < stack.size() - 1) {%>,<%}
     }
-
 %>
 ]

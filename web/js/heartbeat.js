@@ -27,7 +27,7 @@ function run() {
         success: function(data) {
 
             last_heart_beat = data[data.length - 1];
-
+//alert(last_heart_beat);
             heart_beat_recent_data = data;
 
             $("#number").html(last_heart_beat);
