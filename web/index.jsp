@@ -1,6 +1,5 @@
 <!--
-To change this template, choose Tools | Templates
-and open the template in the editor.
+(C) 2013 Heart of Glass Team
 -->
 <!DOCTYPE html>
 <html>

@@ -1,3 +1,6 @@
+<!--
+(C) 2013 Heart of Glass Team
+-->
 <%@page import="java.util.ArrayList"%>
 <%@page import="java.util.List"%>
 <%@page import="java.io.IOException"%>
@@ -46,9 +49,7 @@
                         Thread.sleep(1000);
                     } catch (Exception e) {
                     }
-
                 }
-
             }
         }.start();
     }
@@ -79,7 +80,6 @@
             throw new Exception("Sensor returned null.");
         }
         //device.close();
-
     }
 
     public static void close() throws Exception {
