@@ -36,7 +36,7 @@
         new Thread() {
             public void run() {
 
-                while (1 == 1) {
+                while (true) {
                     try {
                         int result = read();
                         //     fc = read(); 
