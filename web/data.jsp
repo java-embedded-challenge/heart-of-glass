@@ -5,6 +5,7 @@
 <%@page import="org.things.device.SerialDevice"%>
 <%@page import="org.things.Device"%>
 <%@page import="org.unitsofmeasurement.quantity.Quantity" %>
+<%-- TODO factor health-related types into separate bundle --%> 
 <%@page import="org.eclipse.uomo.examples.units.types.Health"%>
 <%@page import="org.eclipse.uomo.examples.units.types.HeartRate"%>
 <%@page import="org.eclipse.uomo.examples.units.types.HeartRateAmount"%>
@@ -72,7 +73,8 @@
 
         if (s != null) {
             return Integer.valueOf(s.split(" ")[2]);
-            //	fc = new FrequenciaCardiaca();
+            //  Integer i = Integer.valueOf(s.split(" ")[2]);
+            //	fc = new HeartRateAmount(i, Health.BPM);
         } else {
             throw new Exception("Sensor returned null.");
         }
