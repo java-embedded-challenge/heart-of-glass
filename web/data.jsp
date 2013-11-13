@@ -70,7 +70,6 @@
         Things.delay(100);
 
         String s = device.receive();
-        //String batimento = null;
 
         if (s != null) {
             return Integer.valueOf(s.split(" ")[2]);
