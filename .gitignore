@@ -3,3 +3,5 @@
 /build/
 /web/WEB-INF/
 /.project
+/bin
+/.settings
