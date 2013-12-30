@@ -1,18 +1,21 @@
+<%@page import="java.util.List"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="java.io.IOException"%>
 <%@page import="org.things.Things"%>
 <%@page import="org.things.device.SerialDevice"%>
 <%@page import="org.things.Device"%>
+<%@page import="org.unitsofmeasurement.demo.health.Health"%>
+<%@page import="org.unitsofmeasurement.demo.health.HeartRateAmount"%>
 <%!    private static Device things;
     private static int inited = 0;
     private static String porta = "/dev/ttyUSB0";
-    private static final ArrayList<Integer> stack = new ArrayList<Integer>();
+    private static final List<HeartRateAmount> stack = new ArrayList<HeartRateAmount>();
 
-    public static void put(int e) {
+    public static void put(HeartRateAmount a) {
         if (stack.size() > 30) {
             stack.remove(0);
         }
-        stack.add(e);
+        stack.add(a);
     }  
 
     public static void iniciar(String porta) throws Exception {
@@ -25,34 +28,29 @@
         new Thread() {
             public void run() {
 
-                while (1 == 1) {
+                while (true) {
                     try {
-                        int leer = ler();
+                        HeartRateAmount result = ler();
                         //     fc = ler(); 
 
-
-                        put(leer);
-                   //     System.out.println("inserting");
+                        put(result);
+                        System.out.println("inserting " + result);
                         Thread.sleep(1000);
                     } catch (Exception e) {
                     }
-
                 }
-
             }
         }.start();
-
-
     }
     public static int last = 0;
 
-    public static int ler() throws IOException, Exception {
+    public static HeartRateAmount ler() throws IOException, Exception {
         if (things == null) {
             if (last == 0) {
                 last = (int) (Math.random() * 40 + 60);
               }
             if(last>300)last=0;
-            return last += (int) (Math.random() * 10 - 5);
+            return HeartRateAmount.of(Integer.valueOf(last += (int) (Math.random() * 10 - 5)), Health.BPM);
         }
         //Device things = new SerialDevice(porta, 9600);
         //things.open();
@@ -61,37 +59,31 @@
         Things.delay(100);
 
         String s = things.receive();
-        String batimento = null;
+        String heartbeat = null;
 
         if (s != null) {
-            return Integer.valueOf(s.split(" ")[2]);
+            return HeartRateAmount.of(Integer.valueOf(s.split(" ")[2]), Health.BPM);
             //	fc = new FrequenciaCardiaca();
         } else {
-            throw new Exception("O sensor retornou nulo.");
+            throw new Exception("The sensor returned null.");
         }
         //things.close();
-
     }
 
     public static void encerrar() throws Exception {
         things.close();
     }
-
-
 %>
 <%
     if (inited == 0) {
         iniciar(porta);
         inited = 1;
     }
-
-
-
 %>
 [
 <%
     for (int i = 0; i < stack.size(); i++) {
-%><%=stack.get(i)%><%
+%><%=stack.get(i).getValue().intValue()%><%
     if (i < stack.size() - 1) {%>,<%}
     }
 
