@@ -7,7 +7,7 @@
 <%@page import="org.unitsofmeasurement.demo.health.Health"%>
 <%@page import="org.unitsofmeasurement.demo.health.HeartRateAmount"%>
 <%!    private static Device things;
-    private static int inited = 0;
+    private static boolean inited = false;
     private static String porta = "/dev/ttyUSB0";
     private static final List<HeartRateAmount> stack = new ArrayList<HeartRateAmount>();
 
@@ -18,7 +18,7 @@
         stack.add(a);
     }  
 
-    public static void iniciar(String porta) throws Exception {
+    public static void init(String porta) throws Exception {
 //		things = new SerialDevice(porta, 9600);
 //		things.open();
         System.setProperty("gnu.io.rxtx.SerialPorts", porta);
@@ -30,8 +30,8 @@
 
                 while (true) {
                     try {
-                        HeartRateAmount result = ler();
-                        //     fc = ler(); 
+                        HeartRateAmount result = read();
+                        //     fc = read(); 
 
                         put(result);
                         System.out.println("inserting " + result);
@@ -44,7 +44,7 @@
     }
     public static int last = 0;
 
-    public static HeartRateAmount ler() throws IOException, Exception {
+    public static HeartRateAmount read() throws IOException, Exception {
         if (things == null) {
             if (last == 0) {
                 last = (int) (Math.random() * 40 + 60);
@@ -75,9 +75,9 @@
     }
 %>
 <%
-    if (inited == 0) {
-        iniciar(porta);
-        inited = 1;
+    if (!inited) {
+        init(porta);
+        inited = true;
     }
 %>
 [
@@ -86,6 +86,5 @@
 %><%=stack.get(i).getValue().intValue()%><%
     if (i < stack.size() - 1) {%>,<%}
     }
-
 %>
 ]
