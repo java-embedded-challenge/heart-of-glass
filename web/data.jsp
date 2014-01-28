@@ -34,7 +34,7 @@
                         //     fc = read(); 
 
                         put(result);
-                        System.out.println("inserting " + result);
+                        System.out.println("Reading " + result);
                         Thread.sleep(1000);
                     } catch (Exception e) {
                     }
