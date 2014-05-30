@@ -106,6 +106,14 @@ function draw() {
 
 
 
+if(last_heart_beat>normal_heart_beat_limit){
+    
+            context.fillStyle = "RGBA(255,0,0,0.5)";
+        context.fillRect(0, 0, w, h);
+        context.fill();
+
+}
+
 
 
         context.restore();
